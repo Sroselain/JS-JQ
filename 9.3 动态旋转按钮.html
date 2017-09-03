@@ -5,8 +5,8 @@
     <title>按钮</title>
     <style>
         #container{
-            width:800px;
-            height:500px;
+            width:100vw;
+            height:100vh;
             margin: 0 auto;
             position:relative;
         }
@@ -16,10 +16,8 @@
             background-color: white;
             border-radius:15px;
             position:absolute;
-            top:50%;
-            left:50%;
-            margin-top:-15px;
-            margin-left:-30px;
+            top:calc(50% - 15px);
+            left:calc(50% - 30px);
         }
         #centerCircle{
             width:20px;
@@ -27,6 +25,7 @@
             border-radius:10px;
             position:absolute;
             top:5px;
+            cursor:pointer;
         }
 
         .pink{
@@ -44,8 +43,18 @@
 
 
         @keyframes btnAnima1 {
-            50%{transform:rotate(45deg)}
-            100%{transform:rotate(0deg)}
+            0% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+            50% {
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+            100% {
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
         }
         @keyframes btnAnima2 {
             50%{transform:rotate(-45deg)}
@@ -58,29 +67,29 @@
             100%{background-color: pink}
         }
         @keyframes circleAnima1 {
-            100%{left:30px;background-color: lightskyblue}
+            100%{left:35px;background-color: lightskyblue}
         }
         @keyframes circleAnima2 {
             100%{left:5px;background-color: pink}
         }
 
         .turnUp{
-            animation:btnAnima1 1s linear;
+            animation:btnAnima1 1s cubic-bezier(0.68, -0.15, 0.265, 1.35);
         }
         .turnDown{
-            animation:btnAnima2 1s linear;
+            animation:btnAnima2 1s cubic-bezier(0.68, -0.15, 0.265, 1.35);
         }
         .circleRight{
-            animation:circleAnima1 1s linear;
+            animation:circleAnima1 1s cubic-bezier(0.68, -0.15, 0.265, 1.35);
         }
         .circleLeft{
-            animation:circleAnima2 1s linear;
+            animation:circleAnima2 1s cubic-bezier(0.68, -0.15, 0.265, 1.35);
         }
         .changeBlue{
-            animation:bgColorAnima1 1s;
+            animation:bgColorAnima1 1s cubic-bezier(0.68, -0.15, 0.265, 1.35);
         }
         .changePink{
-            animation:bgColorAnima2 1s;
+            animation:bgColorAnima2 1s cubic-bezier(0.68, -0.15, 0.265, 1.35);
         }
     </style>
 </head>
@@ -99,29 +108,28 @@
         var tol=1;
         btnCircle.addEventListener("click",function(){
             if(tol===1){
-                btn.setAttribute("class","turnUp");
-                btnCircle.setAttribute("class",btnCircle.getAttribute("class")+" circleRight");
-                map.setAttribute("class","changeBlue");
-
+                btn.classList.add("turnUp");
+                btnCircle.classList.add("circleRight");
+                map.classList.add("changeBlue");
 
                 setTimeout(function(){
                     btnCircle.setAttribute("class","right blue");
                     map.setAttribute("class","blue");
+                    btn.classList.remove("turnUp");
                 },1000);
-
 
                 tol=2;
             }else if(tol===2){
-                btn.setAttribute("class","turnDown");
-                btnCircle.setAttribute("class",btnCircle.getAttribute("class")+" circleLeft");
-                map.setAttribute("class","changePink");
-
+                btn.classList.add("turnDown");
+                btnCircle.classList.add("circleLeft");
+                map.classList.add("changePink");
 
                 setTimeout(function(){
                     btnCircle.setAttribute("class","left pink");
                     map.setAttribute("class","pink");
-                },1000);
+                    btn.classList.remove("turnDown");
 
+                },1000);
 
                 tol=1;
             }

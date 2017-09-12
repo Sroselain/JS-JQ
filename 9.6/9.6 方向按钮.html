@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9.6 按钮</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        #wrapper{
+            width:100vw;
+            height:100vh;
+            background-color:dimgrey;
+        }
+        #button{
+            position:relative;
+            width:200px;
+            height:120px;
+            left:calc(50% - 100px);
+            top:calc(50% - 60px);
+        }
+        button{
+            position:absolute;
+            width:40px;
+            height:20px;
+            background-color: white;
+        }
+        #up{
+            left:calc(50% - 20px);
+            top:28px;
+            border:red solid 2px;
+            color:red;
+        }
+        #up:hover{
+            transition:1s;
+            background-color: red;
+            color:white;
+        }
+        #left{
+            left:38px;
+            top:calc(50% - 10px);
+            border:yellow solid 2px;
+            color:yellow;
+        }
+        #left:hover{
+            transition:1s;
+            background-color: yellow;
+            color:white;
+        }
+        #center{
+            left:calc(50% - 20px);
+            top:50px;
+            border:grey solid 2px;
+            color:grey;
+        }
+        #center:hover{
+            transition:1s;
+            background-color: grey;
+            color:white;
+        }
+        #right{
+            left:122px;
+            top:calc(50% - 10px);
+            border:lightskyblue solid 2px;
+            color:lightskyblue;
+        }
+        #right:hover{
+            transition:1s;
+            background-color: lightskyblue;
+            color:white;
+        }
+        #down{
+            left:calc(50% - 20px);
+            top:72px;
+            border:lawngreen solid 2px;
+            color:lawngreen;
+        }
+        #down:hover{
+            transition:1s;
+            background-color: lawngreen;
+            color:white;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="button">
+            <button type="button" id="up">up</button>
+            <button type="button" id="left">left</button>
+            <button type="button" id="center">center</button>
+            <button type="button" id="right">right</button>
+            <button type="button" id="down">down</button>
+        </div>
+    </div>
+
+</body>
+</html>

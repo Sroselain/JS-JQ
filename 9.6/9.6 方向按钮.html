@@ -8,92 +8,73 @@
             padding:0;
             margin:0;
         }
-        #wrapper{
-            width:100vw;
-            height:100vh;
-            background-color:dimgrey;
-        }
-        #button{
-            position:relative;
-            width:200px;
-            height:120px;
-            left:calc(50% - 100px);
-            top:calc(50% - 60px);
+        body{
+            background-color: darkgray;
+            text-align: center;
+            vertical-align: middle;
+            padding-top:20vh;
         }
         button{
-            position:absolute;
-            width:40px;
-            height:20px;
+            display:block;
+            width:16vw;
+            height:10vh;
             background-color: white;
+            margin:2px auto;
+            font-size:4vw;
+            transition:1s;
+            cursor:pointer;
+        }
+        #left,#center,#right{
+            display:inline-block;
         }
         #up{
-            left:calc(50% - 20px);
-            top:28px;
             border:red solid 2px;
             color:red;
         }
         #up:hover{
-            transition:1s;
-            background-color: red;
+            box-shadow:0 10vh red inset;
             color:white;
         }
         #left{
-            left:38px;
-            top:calc(50% - 10px);
             border:yellow solid 2px;
             color:yellow;
         }
         #left:hover{
-            transition:1s;
-            background-color: yellow;
+            box-shadow:16vw 0 yellow inset;
             color:white;
         }
         #center{
-            left:calc(50% - 20px);
-            top:50px;
             border:grey solid 2px;
             color:grey;
         }
         #center:hover{
-            transition:1s;
-            background-color: grey;
+            box-shadow:0 0 0 2em grey inset;
             color:white;
         }
         #right{
-            left:122px;
-            top:calc(50% - 10px);
             border:lightskyblue solid 2px;
             color:lightskyblue;
         }
         #right:hover{
-            transition:1s;
-            background-color: lightskyblue;
+            box-shadow:-16vw 0 lightskyblue inset;
             color:white;
         }
         #down{
-            left:calc(50% - 20px);
-            top:72px;
             border:lawngreen solid 2px;
             color:lawngreen;
         }
         #down:hover{
-            transition:1s;
-            background-color: lawngreen;
+            box-shadow:0 -10vh lawngreen inset;
             color:white;
         }
 
     </style>
 </head>
 <body>
-    <div id="wrapper">
-        <div id="button">
-            <button type="button" id="up">up</button>
-            <button type="button" id="left">left</button>
-            <button type="button" id="center">center</button>
-            <button type="button" id="right">right</button>
-            <button type="button" id="down">down</button>
-        </div>
-    </div>
-
+            <button type="button" id="up">UP</button>
+            <button type="button" id="left">LEFT</button>
+            <button type="button" id="center">CENTER</button>
+            <button type="button" id="right">RIGHT</button>
+            <button type="button" id="down">DOWN</button>
 </body>
 </html>
